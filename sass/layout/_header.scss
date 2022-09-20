@@ -1,0 +1,20 @@
+@use '../utils' as u;
+
+.header {
+    display: grid;
+    grid-template-areas: 
+                "logo  logo"
+                "hero-l hero-r"
+                "cta    cta";
+    @media (min-width: 1000px) {
+        grid-template-areas: 
+                "logo logo logo"
+                "hero-l cta hero-r";
+    }
+    &__logo {
+        grid-area: logo;
+
+        margin-inline: auto;
+        @include u.padding-block(3rem, $tab-bottom: 4rem, $desk-top: 5rem, $desk-bottom: 3.8125rem);
+    }
+}

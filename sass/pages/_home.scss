@@ -1,0 +1,74 @@
+@use '../utils/' as u;
+
+.hero {
+    &-right {
+        grid-area: hero-r;
+        margin-left: auto;
+    }
+    &-left {
+        grid-area: hero-l;
+    }
+}
+
+.cta {
+    grid-area: cta;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    text-align: center;
+    max-width: 42ch;
+    
+    margin-inline: auto;
+    @include u.margin-block(3rem, 4rem, 4rem, 4.1875rem, 2.9375rem, 4rem);
+    &__title {
+        max-width: 10ch;
+        @include u.typography(
+            $fs: u.$fs-500,
+            $fw: u.$fw-bold,
+            $lh: u.$lh-600,
+            $clr: u.$clr-neutral-900,
+            //respondive args
+            $desk-fs: u.$fs-900,
+            $desk-lh: u.$lh-900,
+            $tab-fs: u.$fs-700,
+            $tab-lh: u.$lh-700
+        )
+    }
+    &__body {
+        @include u.typography (
+            $fs: u.$fs-200,
+            $fw: u.$fw-body,
+            $lh: u.$lh-300,
+            $clr: u.$clr-neutral-500,
+            // responsive args
+            $desk-fs: u.$fs-300,
+        )
+    }
+}
+
+.number {
+    @include u.typography(
+        $fs: u.$fs-200,
+        $fw: u.$fw-bold,
+        $lh: u.$lh-300,
+        $clr: u.$clr-neutral-500
+    );
+    position: relative;
+    list-style: none;
+    display: inline-block;
+    border-radius: 50%;
+    padding: 1rem 19px;
+    border: 1px solid lighten(u.$clr-neutral-500, 35%);
+    margin-top: 7.25rem;
+    &::before {
+        content: "";
+        position: absolute;
+        width: 1px;
+        height: 5.25rem;
+        background: lighten(u.$clr-neutral-500, 35%);
+        top: -5.25rem;
+        right: 50%;
+    }
+}
