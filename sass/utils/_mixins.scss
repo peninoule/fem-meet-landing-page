@@ -12,6 +12,20 @@
     }
 }
 
+@mixin media($types...) {
+    @each $type in $types {
+        @if $type == tablet {
+            @include tablet {
+                @content;
+            }
+        } @else if $type == desktop {
+            @include desktop {
+                @content;
+            }
+        }
+    }
+}
+
 @mixin typography ($fs, $tab-fs: $fs, $desk-fs: $fs, 
                    $lh ,$tab-lh: $lh, $desk-lh: $lh, 
                    $fw, $clr
@@ -21,42 +35,29 @@
     font-weight: $fw;
     line-height: $lh;
     color: $clr;
-    @media (min-width: calc(v.$desktop + 1px)) {
+    @include desktop {
         font-size: $desk-fs;
         line-height: $desk-lh;
     }
-    @media (min-width: v.$tablet) and (max-width: v.$desktop) {
+    @include tablet {
         font-size: $tab-fs;
         line-height: $tab-lh;
     }
 }
 
-@mixin padding-block($top, $bottom: $top,
-                     $tab-top: $top, $tab-bottom: $tab-bottom,
-                     $desk-top: $top, $desk-bottom: $desk-top,
+// pm => Padding, margin
+@mixin pm-block($pm, $top, $bottom: $top,
+                     $tab-top: $top, $tab-bottom: $bottom,
+                     $desk-top: $top, $desk-bottom: $bottom,
                      ) {
-    padding-block: $top $bottom;
-    @media (min-width: calc(v.$desktop + 1px)) {
-        padding-block: $desk-top $desk-bottom;
+    #{$pm}-block: $top $bottom;
+    @include desktop {
+        #{$pm}-block: $desk-top $desk-bottom;
     }
-    @media (min-width: v.$tablet) and (max-width: v.$desktop) {
-        padding-block: $tab-top $tab-bottom;
+    @include tablet {
+        #{$pm}-block: $tab-top $tab-bottom;
     }
 }
-
-@mixin margin-block($top, $bottom: $top,
-                    $tab-top: $top, $tab-bottom: $tab-bottom,
-                    $desk-top: $top, $desk-bottom: $desk-top,
-                     ) {
-    margin-block: $top $bottom;
-    @media (min-width: calc(v.$desktop + 1px)) {
-        margin-block: $desk-top $desk-bottom;
-    }
-    @media (min-width: v.$tablet) and (max-width: v.$desktop) {
-        margin-block: $tab-top $tab-bottom;
-    }
-}
-
 
 @mixin btn-colors($map) {
     @each $name, $colors in $map {

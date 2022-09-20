@@ -23,6 +23,7 @@ $lh-300: 1.625rem; // 26px
 // colors
 $clr-primary-800: hsl(268, 34%, 53%);
 $clr-primary-500: hsl(192, 37%, 48%);
+$clr-primary-400: hsla(193, 40%, 40%, 0.9);
 
 $clr-neutral-900: hsl(240, 21%, 20%);
 $clr-neutral-500: hsl(240, 10%, 57%);
@@ -47,5 +48,5 @@ $btn-padding: (
 );
 
 // breakpoints
-$desktop: 1025px;
-$tablet: 769px;
+$desktop: 1100px;
+$tablet: 768px;

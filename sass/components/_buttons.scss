@@ -7,6 +7,9 @@
     gap: 1rem;
 
     margin-top: .5rem;
+    @include u.media(tablet, desktop) {
+        flex-direction: row;
+    }
 }
 
 .btn {

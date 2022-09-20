@@ -6,7 +6,7 @@
                 "logo  logo"
                 "hero-l hero-r"
                 "cta    cta";
-    @media (min-width: 1000px) {
+    @include u.desktop {
         grid-template-areas: 
                 "logo logo logo"
                 "hero-l cta hero-r";
@@ -15,6 +15,8 @@
         grid-area: logo;
 
         margin-inline: auto;
-        @include u.padding-block(3rem, $tab-bottom: 4rem, $desk-top: 5rem, $desk-bottom: 3.8125rem);
+        @include u.pm-block(padding, $top: 3rem, $bottom: 3.375rem, 
+                                     $tab-bottom: 4rem, 
+                                     $desk-top: 5rem, $desk-bottom: 3.8125rem);
     }
 }
