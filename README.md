@@ -27,8 +27,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [https://github.com/peninoule/fem-meet-landing-page](https://your-solution-url.com)
-- Live Site URL: [https://fem-meet-landing-page-one.vercel.app/](https://your-live-site-url.com)
+- Solution URL: [Front End Mentor](https://www.frontendmentor.io/solutions/meet-landing-page-using-css-grid-templates-JXqsMQ_Tnp)
+- Live Site URL: [Vercel](https://fem-meet-landing-page-one.vercel.app/)
 
 ## My process
 
